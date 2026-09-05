@@ -17,6 +17,17 @@
     box-sizing: border-box
 }
 
+#cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--violet);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
 html {
     scroll-behavior: smooth
 }
@@ -406,7 +417,7 @@ section {
 .pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px
+    gap: 8px;
 }
 
 .pill {
@@ -415,7 +426,7 @@ section {
     border-radius: 6px;
     background: var(--bg-card);
     border: 1px solid var(--line);
-    color: var(--text-dim)
+    color: var(--text-dim);
 }
 
 .projects {

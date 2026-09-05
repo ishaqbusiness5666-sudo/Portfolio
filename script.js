@@ -41,4 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: { trigger: bar, start: 'top 90%', once: true }
         });
     });
+
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+    if(window.innerWidth < 768) {
+        cursor.style.display = "none";
+    }
+
 });
