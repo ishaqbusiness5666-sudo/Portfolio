@@ -8,6 +8,7 @@ Personal portfolio website for Muhammad Ishaque, built with semantic HTML, exter
 - `style.css` contains all layout, responsive, and visual styles.
 - `script.js` contains GSAP entrance, scroll reveal, and progress-bar animations.
 - `profile.jpg` is the profile image used by the page.
+- `llms.txt` provides a concise, machine-readable profile for AI assistants and search tools.
 
 ## Run locally
 

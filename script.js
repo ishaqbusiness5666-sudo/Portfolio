@@ -1,54 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if (!window.gsap) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) return;
-
-    gsap.from('.hero-copy > *', {
-        opacity: 0,
-        y: 24,
-        duration: 0.7,
-        stagger: 0.08,
-        ease: 'power2.out'
-    });
-
-    gsap.from('.terminal', {
-        opacity: 0,
-        x: 28,
-        duration: 0.9,
-        delay: 0.2,
-        ease: 'power2.out'
-    });
-
-    gsap.utils.toArray('section:not(.hero)').forEach((section) => {
-        gsap.from(section.querySelectorAll('.section-head, .about-grid, .projects, .stats-grid, .focus-bars, .contact-box'), {
-            scrollTrigger: { trigger: section, start: 'top 82%', once: true },
-            opacity: 0,
-            y: 24,
-            duration: 0.7,
-            stagger: 0.08,
-            ease: 'power2.out'
-        });
-    });
-
-    gsap.utils.toArray('.focus-fill').forEach((bar) => {
-        gsap.fromTo(bar, { width: 0 }, {
-            width: bar.style.width,
-            duration: 1,
-            ease: 'power2.out',
-            scrollTrigger: { trigger: bar, start: 'top 90%', once: true }
-        });
-    });
-
+    const loader = document.getElementById('page-loader');
     const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-    if(window.innerWidth < 768) {
-        cursor.style.display = "none";
+
+    if (cursor && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+        document.addEventListener('mousemove', ({ clientX, clientY }) => {
+            cursor.style.left = `${clientX}px`;
+            cursor.style.top = `${clientY}px`;
+        }, { passive: true });
     }
+
+    if (!window.gsap) {
+        loader?.remove();
+        return;
+    }
+
+    if (reduceMotion) {
+        loader?.remove();
+        return;
+    }
+
+    const intro = gsap.timeline({
+        defaults: { ease: 'power2.out' },
+        onComplete: () => loader?.setAttribute('aria-hidden', 'true')
+    });
+
+    intro.to('.loader-line span', { scaleX: 1, duration: 0.45, ease: 'power3.inOut' })
+        .to(loader, { yPercent: -100, duration: 0.65, ease: 'power3.inOut' })
+        .from('.hero-copy > *', { opacity: 0, y: 24, duration: 0.55, stagger: 0.06 }, '-=0.2')
+        .from('.terminal', { opacity: 0, x: 28, duration: 0.7 }, '<');
 
 });

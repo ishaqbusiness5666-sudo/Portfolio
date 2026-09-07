@@ -4,8 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammad Ishaque - Frontend and full-stack JavaScript developer portfolio.">
-    <title>Muhammad Ishaque &mdash; Full Stack JavaScript Developer</title>
+    <meta name="description" content="Muhammad Ishaque is a frontend and full-stack JavaScript developer in Karachi, Pakistan, specializing in React.js, Node.js, REST APIs, and MongoDB.">
+    <meta name="author" content="Muhammad Ishaque">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#030712">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Muhammad Ishaque | Frontend &amp; Full-Stack JavaScript Developer">
+    <meta property="og:description" content="Explore Muhammad Ishaque's frontend and full-stack JavaScript projects, React.js work, REST APIs, and MERN stack experience.">
+    <meta property="og:image" content="profile.jpg">
+    <meta property="og:image:alt" content="Portrait of Muhammad Ishaque, JavaScript developer">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Muhammad Ishaque | Frontend &amp; Full-Stack JavaScript Developer">
+    <meta name="twitter:description" content="Frontend and full-stack JavaScript developer portfolio featuring React.js, Node.js, Express.js, MongoDB, and REST API projects.">
+    <meta name="twitter:image" content="profile.jpg">
+    <title>Muhammad Ishaque | Frontend &amp; Full-Stack JavaScript Developer</title>
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +28,77 @@
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "ProfilePage",
+                    "name": "Muhammad Ishaque | Frontend and Full-Stack JavaScript Developer",
+                    "description": "Professional portfolio of Muhammad Ishaque, a frontend and full-stack JavaScript developer in Karachi, Pakistan.",
+                    "mainEntity": { "@id": "#muhammad-ishaque" }
+                },
+                {
+                    "@type": "Person",
+                    "@id": "#muhammad-ishaque",
+                    "name": "Muhammad Ishaque",
+                    "jobTitle": "Frontend and Full-Stack JavaScript Developer",
+                    "description": "Muhammad Ishaque builds responsive web applications and production-ready interfaces with JavaScript, React.js, Node.js, Express.js, MongoDB, REST APIs, and GSAP.",
+                    "email": "ishaqbusiness5666@gmail.com",
+                    "image": "profile.jpg",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Karachi",
+                        "addressCountry": "PK"
+                    },
+                    "hasOccupation": {
+                        "@type": "Occupation",
+                        "name": "Frontend and Full-Stack JavaScript Developer",
+                        "occupationLocation": {
+                            "@type": "City",
+                            "name": "Karachi"
+                        },
+                        "skills": "JavaScript, React.js, Node.js, Express.js, MongoDB, REST APIs, GSAP, HTML, CSS"
+                    },
+                    "knowsAbout": [
+                        "JavaScript", "React.js", "Node.js", "Express.js", "MongoDB",
+                        "REST APIs", "GSAP", "Frontend development", "Full-stack development",
+                        "Responsive web design", "Web application development"
+                    ],
+                    "seeks": {
+                        "@type": "Demand",
+                        "name": "Frontend and full-stack JavaScript development opportunities"
+                    },
+                    "sameAs": [
+                        "https://github.com/ishaqbusiness5666-sudo",
+                        "https://www.linkedin.com/in/muhammad-ishaq03/"
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "name": "Muhammad Ishaque JavaScript projects",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem", "position": 1,
+                            "item": { "@type": "SoftwareSourceCode", "name": "Netflix Clone", "programmingLanguage": "JavaScript", "url": "https://netflex-clone-red-eight.vercel.app" }
+                        },
+                        {
+                            "@type": "ListItem", "position": 2,
+                            "item": { "@type": "SoftwareSourceCode", "name": "To-Do List App", "programmingLanguage": "JavaScript", "url": "https://to-do-list-pi-ashy-40.vercel.app" }
+                        },
+                        {
+                            "@type": "ListItem", "position": 3,
+                            "item": { "@type": "SoftwareSourceCode", "name": "React Pagination Image Gallery", "programmingLanguage": "JavaScript", "url": "https://react-js-pagination-website.vercel.app" }
+                        },
+                        {
+                            "@type": "ListItem", "position": 4,
+                            "item": { "@type": "SoftwareSourceCode", "name": "YouTube Multiple Screen Player", "programmingLanguage": "JavaScript", "url": "https://youtube-multiple-video.vercel.app" }
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
 </head>
 
 
@@ -30,6 +113,11 @@
     </header>
     <!-- for cursor -->
     <div id="cursor"></div>
+    <!-- for loading screen -->
+    <div id="page-loader" aria-label="Loading portfolio" role="status">
+        <div class="loader-mark">MI<span>&#179;</span></div>
+        <div class="loader-line"><span></span></div>
+    </div>
 
     <main class="wrap">
         <section class="hero">
@@ -96,39 +184,16 @@
                 <div class="stack-groups">
                     <div class="stack-group">
                         <h4>Frontend</h4>
-                        <div class="pills"><span style="border: 1px solid rgb(4, 175, 227);" class="pill"
-                                style="color: rgb(4, 175, 227);"><i class="fa-brands fa-react"
-                                    style="color: rgb(4, 175, 227); "></i>React.js</span><span
-                                style="border: 1px solid rgb(209, 255, 5);" class="pill"><i class="fa-brands fa-js"
-                                    style="color: rgb(209, 255, 5);"></i>JavaScript</span><span
-                                style="border: 1px solid rgb(116, 192, 252);" class="pill">
-                                <i class="fa-brands fa-tailwind-css" style="color: rgb(116, 192, 252);"></i>Tailwind
-                                CSS</span><span style="border: 1px solid rgb(227, 4, 4);" class="pill"><i
-                                    class="fa-brands fa-html5" style="color: rgb(227, 4, 4);"></i>HTML</span>
-                            <span style="border: 1px solid rgb(4, 255, 25);" class="pill"><i class="fa-solid fa-wind"
-                                    style="color: rgb(4, 255, 25);"></i>GSAP</span>
+                        <div class="pills"><span class="pill pill-react"><i class="fa-brands fa-react"></i>React.js</span><span class="pill pill-javascript"><i class="fa-brands fa-js"></i>JavaScript</span><span class="pill pill-tailwind"><i class="fa-brands fa-tailwind-css"></i>Tailwind CSS</span><span class="pill pill-html"><i class="fa-brands fa-html5"></i>HTML</span><span class="pill pill-gsap"><i class="fa-solid fa-wind"></i>GSAP</span>
                         </div>
                     </div>
                     <div class="stack-group">
                         <h4>Backend &amp; Database</h4>
-                        <div class="pills "><span style="border: 1px solid rgb(4, 237, 74);" class="pill"><i
-                                    class="fa-brands fa-node-js" style="color: rgb(4, 237, 74);
-                                    "></i>Node.js</span><span
-                                style="border: 1px solid rgb(245, 245, 0);" class="pill"><i class="fa-brands fa-js"
-                                    style="color: rgba(245, 245, 0, 0.979);"></i>Express.js</span><span
-                                style="border: 1px solid rgb(14, 253, 6);" class="pill"><i class="fa-brands fa-mdb"
-                                    style="color: rgb(14, 253, 6);"></i>MongoDB</span><span
-                                style="border: 1px solid rgb(4, 175, 227);" class="pill"><i class="fa-solid fa-sitemap"
-                                    style="color: rgb(4, 175, 227);"></i>REST APIs</span></div>
+                        <div class="pills"><span class="pill pill-node"><i class="fa-brands fa-node-js"></i>Node.js</span><span class="pill pill-express"><i class="fa-brands fa-js"></i>Express.js</span><span class="pill pill-mongodb"><i class="fa-brands fa-mdb"></i>MongoDB</span><span class="pill pill-api"><i class="fa-solid fa-sitemap"></i>REST APIs</span></div>
                     </div>
                     <div class="stack-group">
                         <h4>Tools</h4>
-                        <div class="pills"><span style="border: 1px solid rgb(253, 135, 0);" class="pill"><i
-                                    class="fa-brands fa-git-alt" style="color: rgb(253, 135, 0);"></i>Git &amp;
-                                GitHub</span><span style="border: 1px solid rgb(142, 4, 227);" class="pill"><i
-                                    class="fa-solid fa-server" style="color: rgb(142, 4, 227);"></i>Vercel</span><span
-                                style="border: 1px solid rgb(4, 45, 227);" class="pill"><i class="fa-solid fa-code"
-                                    style="color: rgb(4, 45, 227);"></i>VS Code</span></div>
+                        <div class="pills"><span class="pill pill-git"><i class="fa-brands fa-git-alt"></i>Git &amp; GitHub</span><span class="pill pill-vercel"><i class="fa-solid fa-server"></i>Vercel</span><span class="pill pill-vscode"><i class="fa-solid fa-code"></i>VS Code</span></div>
                     </div>
                 </div>
             </div>
@@ -286,7 +351,6 @@
                 href="mailto:ishaqbusiness5666@gmail.com">ishaqbusiness5666@gmail.com</a></p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 
