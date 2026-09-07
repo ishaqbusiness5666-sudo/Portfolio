@@ -194,7 +194,7 @@ nav {
 }
 
 .hero {
-    padding: 48px 0 80px;
+    padding: 40px 0 80px;
     display: grid;
     grid-template-columns: 1.05fr .95fr;
     gap: 56px;
@@ -303,7 +303,7 @@ nav {
 
 .btn-primary {
     --button-fill: var(--violet);
-   color: #fff
+      color: #fff
 }
 
 .btn-secondary {
