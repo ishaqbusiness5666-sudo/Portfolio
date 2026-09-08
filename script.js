@@ -43,7 +43,6 @@ async function fetchGitHubRest(path) {
     if (!response.ok) {
         throw new Error(`GitHub REST request failed with status ${response.status}.`);
     }
-
     return response.json();
 }
 
@@ -53,12 +52,6 @@ async function loadGitHubActivity() {
             fetchGitHubRest(''),
             fetchGitHubRest('/events/public?per_page=100')
         ]);
-
-        const publicContributions = events.reduce((total, event) => {
-            return total + (event.type === 'PushEvent' ? event.payload?.commits?.length || 1 : 0);
-        }, 0);
-
-        document.getElementById('github-contribution-count').textContent = publicContributions;
         document.getElementById('github-followers').textContent = profile.followers;
         document.getElementById('github-public-repos').textContent = profile.public_repos;
         document.getElementById('github-total-repos').textContent = profile.public_repos;
@@ -68,3 +61,25 @@ async function loadGitHubActivity() {
 }
 
 loadGitHubActivity();
+
+const contributionsElement = document.getElementById('github-contribution-count');
+
+const year = new Date().getFullYear();
+
+fetch(`https://github-contributions-api.jogruber.de/v4/ishaqbusiness5666-sudo?y=${year}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to fetch GitHub contributions");
+        }
+        return response.json();
+    })
+    .then(data => {
+        const count = data.total[year] ?? 0;
+        contributionsElement.textContent =
+            `${count}`;
+    })
+    .catch(error => {
+        console.error("GitHub contributions error:", error);
+        contributionsElement.textContent =
+            "Contributions unavailable";
+    });
