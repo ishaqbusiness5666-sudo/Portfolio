@@ -29,6 +29,8 @@
     z-index: 9999;
 }
 
+
+
 @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
     #cursor {
         display: block;
@@ -78,9 +80,14 @@ i{
 }
 
 html {
+    resize: horizontal;
     scroll-behavior:smooth;
     overflow-x: hidden;
     transition: background .3s ease, color .3s ease;
+    scrollbar-width: thin;
+    scrollbar-color: var(--violet) var(--line);
+    scrollbar-gutter: stable;
+    scroll-padding-top: 80px;
 }
 
 body {
