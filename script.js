@@ -31,3 +31,40 @@ document.addEventListener('DOMContentLoaded', () => {
         .from('.terminal', { opacity: 0, x: 28, duration: 0.7 }, '<');
 
 });
+
+const githubUsername = 'ishaqbusiness5666-sudo';
+const githubApiBase = `https://api.github.com/users/${githubUsername}`;
+
+async function fetchGitHubRest(path) {
+    const response = await fetch(`${githubApiBase}${path}`, {
+        headers: { Accept: 'application/vnd.github+json' }
+    });
+
+    if (!response.ok) {
+        throw new Error(`GitHub REST request failed with status ${response.status}.`);
+    }
+
+    return response.json();
+}
+
+async function loadGitHubActivity() {
+    try {
+        const [profile, events] = await Promise.all([
+            fetchGitHubRest(''),
+            fetchGitHubRest('/events/public?per_page=100')
+        ]);
+
+        const publicContributions = events.reduce((total, event) => {
+            return total + (event.type === 'PushEvent' ? event.payload?.commits?.length || 1 : 0);
+        }, 0);
+
+        document.getElementById('github-contribution-count').textContent = publicContributions;
+        document.getElementById('github-followers').textContent = profile.followers;
+        document.getElementById('github-public-repos').textContent = profile.public_repos;
+        document.getElementById('github-total-repos').textContent = profile.public_repos;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+loadGitHubActivity();
