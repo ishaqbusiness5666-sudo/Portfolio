@@ -35,6 +35,12 @@
     }
 }
 
+i{
+    font-size: 1rem;
+    color: var(--text-dim);
+    margin-right: 6px;
+}
+
 #page-loader {
     position: fixed;
     inset: 0;
@@ -72,7 +78,7 @@
 }
 
 html {
-    scroll-behavior: auto;
+    scroll-behavior:smooth;
     transition: background .3s ease, color .3s ease;
 }
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://m-ishaque03.vercel.app/sitemap.xml
