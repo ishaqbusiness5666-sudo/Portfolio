@@ -31,6 +31,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="6V14LGbgmWRCpWscR-OAkwmJxK5YiPwCQgx0QxgKl6c" />
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="script.js"></script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -117,7 +119,7 @@
         </nav>
     </header>
     <!-- for cursor -->
-    <div id="cursor"></div>
+    <div id="cursor" aria-hidden="true"></div>
     <!-- for loading screen -->
     <div id="page-loader" aria-label="Loading portfolio" role="status">
         <div class="loader-mark">MI<span>&#179;</span></div>
@@ -127,7 +129,8 @@
     <main class="wrap">
         <section class="hero">
             <div class="hero-copy">
-                <div class="id-row"><img class="avatar" src="profile.jpg" alt="Portrait of Muhammad Ishaque">
+                <div class="id-row"><img class="avatar" src="profile.jpg" alt="Portrait of Muhammad Ishaque"
+                        width="1254" height="1254" decoding="async">
                     <div>
                         <div class="id-name">Muhammad Ishaque</div>
                         <div class="id-role">Frontend / Full Stack Developer</div>
@@ -172,7 +175,8 @@
                 <div class="photo-panel">
                     <div class="terminal-bar"><span class="tdot t1"></span><span class="tdot t2"></span><span
                             class="tdot t3"></span><span class="fname">profile.jpg</span></div><img src="profile.jpg"
-                        alt="Portrait of Muhammad Ishaque">
+                        alt="Portrait of Muhammad Ishaque" width="1000" height="1000" loading="lazy"
+                        decoding="async">
                 </div>
                 <div class="about-text">
                     <p>I'm a <strong>frontend and full-stack developer</strong> focused on building modern, responsive
@@ -188,16 +192,16 @@
                 </div>
                 <div class="stack-groups">
                     <div class="stack-group">
-                        <h4>Frontend</h4>
+                        <h3>Frontend</h3>
                         <div class="pills"><span class="pill pill-react"><i class="fa-brands fa-react"></i>React.js</span><span class="pill pill-javascript"><i class="fa-brands fa-js"></i>JavaScript</span><span class="pill pill-tailwind"><i class="fa-brands fa-tailwind-css"></i>Tailwind CSS</span><span class="pill pill-html"><i class="fa-brands fa-html5"></i>HTML</span><span class="pill pill-gsap"><i class="fa-solid fa-wind"></i>GSAP</span>
                         </div>
                     </div>
                     <div class="stack-group">
-                        <h4>Backend &amp; Database</h4>
+                        <h3>Backend &amp; Database</h3>
                         <div class="pills"><span class="pill pill-node"><i class="fa-brands fa-node-js"></i>Node.js</span><span class="pill pill-express"><i class="fa-brands fa-js"></i>Express.js</span><span class="pill pill-mongodb"><i class="fa-brands fa-mdb"></i>MongoDB</span><span class="pill pill-api"><i class="fa-solid fa-sitemap"></i>REST APIs</span></div>
                     </div>
                     <div class="stack-group">
-                        <h4>Tools</h4>
+                        <h3>Tools</h3>
                         <div class="pills"><span class="pill pill-git"><i class="fa-brands fa-git-alt"></i>Git &amp; GitHub</span><span class="pill pill-vercel"><i class="fa-solid fa-server"></i>Vercel</span><span class="pill pill-vscode"><i class="fa-solid fa-code"></i>VS Code</span></div>
                     </div>
                 </div>
@@ -355,8 +359,6 @@
         <p>Muhammad Ishaque &middot; Karachi, Pakistan &middot; <a
                 href="mailto:ishaqbusiness5666@gmail.com">ishaqbusiness5666@gmail.com</a></p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="script.js"></script>
 </body>
 
 </html>

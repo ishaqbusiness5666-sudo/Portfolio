@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (cursor && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
         document.addEventListener('mousemove', ({ clientX, clientY }) => {
-            cursor.style.left = `${clientX}px`;
-            cursor.style.top = `${clientY}px`;
+            cursor.style.transform = `translate3d(${clientX}px, ${clientY}px, 0) translate(-50%, -50%)`;
         }, { passive: true });
     }
 
@@ -48,10 +47,7 @@ async function fetchGitHubRest(path) {
 
 async function loadGitHubActivity() {
     try {
-        const [profile, events] = await Promise.all([
-            fetchGitHubRest(''),
-            fetchGitHubRest('/events/public?per_page=100')
-        ]);
+        const profile = await fetchGitHubRest('');
         document.getElementById('github-followers').textContent = profile.followers;
         document.getElementById('github-public-repos').textContent = profile.public_repos;
         document.getElementById('github-total-repos').textContent = profile.public_repos;
