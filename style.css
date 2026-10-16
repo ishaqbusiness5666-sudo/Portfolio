@@ -17,6 +17,22 @@
     box-sizing: border-box
 }
 
+@font-face {
+    font-family: "Font Awesome 7 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/webfonts/fa-solid-900.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: "Font Awesome 7 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/webfonts/fa-brands-400.woff2") format("woff2")
+}
+
 #cursor {
     display: none;
     width: 20px;
@@ -487,7 +503,6 @@ section {
     border-radius: 12px;
     overflow: hidden;
     background: var(--bg-card);
-    align-self: stretch;
     box-shadow: 0 24px 56px -32px rgba(139, 92, 246, .45)
 }
 
@@ -516,10 +531,6 @@ section {
     color: var(--text-dim);
     margin-bottom: 18px;
     max-width: 58ch
-}
-
-.about-text p:last-child {
-    margin-bottom: 18px
 }
 
 .about-text p strong {
@@ -561,17 +572,13 @@ section {
     padding: 6px 13px;
     border-radius: 6px;
     background: var(--bg-card);
-    border: 1px solid var(--line);
-    color: var(--text-dim);
-}
-
-.pill {
-    border-color: var(--pill-color);
+    border: 1px solid var(--pill-color);
+    color: var(--text-dim)
 }
 
 .pill i {
     color: var(--pill-color);
-    margin-right: 5px;
+    margin-right: 5px
 }
 
 .pill-react { --pill-color: rgb(4, 175, 227); }
@@ -682,10 +689,6 @@ section {
     overflow: hidden
 }
 
-.contribution-summary {
-    grid-template-columns: repeat(4, 1fr);
-}
-
 .stat {
     background: var(--bg-card);
     padding: 28px 24px
@@ -702,17 +705,6 @@ section {
     font-size: .83rem;
     color: var(--text-faint);
     margin-top: 6px
-}
-
-.github-activity {
-    margin-top: 32px;
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: rgba(13, 20, 36, .72);
-    backdrop-filter: blur(14px);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05);
-    overflow: hidden
 }
 
 .focus-bars {
@@ -809,10 +801,6 @@ footer a:hover {
     .about-grid {
         grid-template-columns: minmax(200px, .82fr) minmax(0, 1.18fr);
         gap: 20px
-    }
-
-    .photo-panel {
-        max-width: none
     }
 }
 
